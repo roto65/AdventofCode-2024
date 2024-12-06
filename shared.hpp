@@ -3,6 +3,8 @@
 struct Pos {
     int x, y;
 
+    Pos() = default;
+
     Pos(const Pos& p) {
         x = p.x;
         y = p.y;
@@ -11,6 +13,10 @@ struct Pos {
     Pos(const int& X, const int& Y) {
         x = X;
         y = Y;
+    }
+
+    bool operator==(const Pos& p) const {
+        return x == p.x && y == p.y;
     }
 
     bool operator!=(const Pos& p) const {
